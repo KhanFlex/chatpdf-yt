@@ -1,0 +1,24 @@
+/* ScrollableComponent.module.css */
+.scrollable-content {
+    scrollbar-width: thin;
+    scrollbar-color: #f1f2f2 #fff;
+  }
+  
+  .scrollable-content::-webkit-scrollbar {
+    scrollbar-gutter: stable;
+    width: 4px;
+  }
+  
+  .scrollable-content::-webkit-scrollbar-thumb {
+    background-color:  #181818;
+    border-radius: 5px;
+  }
+  
+  .scrollable-content::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+  
+  .scrollable-content::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  

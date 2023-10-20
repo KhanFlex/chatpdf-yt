@@ -1,13 +1,14 @@
 "use client";
 import React from "react";
-import { Input } from "./ui/input";
+import { Input } from "../ui/input";
 import { useChat } from "ai/react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { Send } from "lucide-react";
-import MessageList from "./MessageList";
+import MessageList from "../MessageList";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Message } from "ai";
+import styles from "./ChatComponent.module.css"
 
 type Props = { chatId: number };
 
@@ -38,10 +39,11 @@ const ChatComponent = ({ chatId }: Props) => {
       });
     }
   }, [messages]);
+
   return (
     <div
-      className="relative max-h-screen overflow-scroll"
       id="message-container"
+      className={`${styles['scrollable-content']} relative max-h-screen overflow-y-scroll`}
     >
       {/* header */}
       <div className="sticky top-0 inset-x-0 p-2 bg-white h-fit">
@@ -53,7 +55,7 @@ const ChatComponent = ({ chatId }: Props) => {
 
       <form
         onSubmit={handleSubmit}
-        className="sticky bottom-0 inset-x-0 px-2 py-4 bg-white"
+        className="sticky bottom-0 inset-x-0 px-2 py-4 bg-white mt-2"
       >
         <div className="flex">
           <Input
